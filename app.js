@@ -18,10 +18,6 @@ app.get("/api/embassies", (_, res) => {
    }); 
  }) 
 
-
-
-
-
 app.listen(port, () => {
     console.log(`lisening on http://localhost:${port}`)
 })
