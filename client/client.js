@@ -1,3 +1,7 @@
+//let dumb = require("app.js")
+let j = document.createElement("p");
+j.innerHTML = dumb;
+document.body.appendChild(j);
 let emojis = ["👻",　"👽👍", "👍"]
 
 emojis.forEach(element => {
