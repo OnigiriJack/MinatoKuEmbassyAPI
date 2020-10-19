@@ -2,7 +2,10 @@
   "name": "solo",
   "version": "1.0.0",
   "description": "an api solo project in one day",
-  "main": "index.js",
+  "main": "app.js",
+  "scripts": {
+    "dev:server": "nodemon app.js"  
+  },
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
