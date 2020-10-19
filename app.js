@@ -9,10 +9,10 @@ const app = express();
 // serve static files
 
 app.use(express.static("client"));
-app.get("/api/users", (_, res) => {
+app.get("/api/embassies", (_, res) => {
     knex
    .select()
-   .table("dumb")
+   .table("embassies")
    .then((rows) => {
      res.send(rows)
    }); 
