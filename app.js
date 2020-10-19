@@ -1,10 +1,9 @@
-let express = require("express");
+let express = require("express"); // import package
 
-
-
-//init app
+// initialize app
 const port = 5000;
 const app = express();
+// serve static files
 app.use(express.static("./"));
 
 /*  app.get("/", (_, res) => {
