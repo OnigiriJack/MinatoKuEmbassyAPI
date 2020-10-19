@@ -1,0 +1,7 @@
+{
+  "name": "solo",
+  "version": "1.0.0",
+  "description": "an api solo project in one day",
+  "main": "index.js",
+  "license": "MIT"
+}
