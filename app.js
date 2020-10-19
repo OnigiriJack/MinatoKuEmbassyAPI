@@ -1,22 +1,33 @@
 let express = require("express"); // import package
 
-var knex = require('knex')({
-    client: 'postgres',
+// Setting up the database connection
+const knex = require('knex')({
+    client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'jackfowler',
-      database : 'solo_api'
+      host     : '127.0.0.1',
+      user     : 'jackfowler',
+      password : 'your_database_password',
+      database : 'solo_api',
+      charset  : 'utf8'
     }
-  });
+  })
+  const bookshelf = require('bookshelf')(knex);
 
- const users = knex 
- .select()
- .table("users")
- .then((rows) => {
-console.log(rows)
- })
 
- console.log(users)
+// Defining models
+const User = bookshelf.model('User', {
+    tableName: 'users'
+  })
+
+  // select * from `books` where `ISBN-13` = '9780440180296'
+  new User({'id':   1})
+    .fetch()
+    .then(function(model) {
+      // outputs 'Slaughterhouse Five'
+      console.log(model.get('name'));
+    });
+
+ //console.log(users)
 // initialize app
 const port = 5000;
 const app = express();
